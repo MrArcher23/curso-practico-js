@@ -17,18 +17,35 @@
 //     console.log(`El area del cuadrado es: ${area}cm^2`);
 // }
 
-function calcPerimetroCuadrado(lado) {
+//funcion que hace operacion para calcular perimetro.
+function perimetroCuadrado(lado) {
     perimetro = lado * 4;
     return `El perimetro del cuadrado es: ${perimetro}cm`;
 };
-
 function calcAreaCuadrado(lado) {
     area = lado * lado;
     return `El area del cuadrado es: ${area}cm^2`
-}
+};
+//funciones que interactuan en el html
+function calcPerimetroCuadro() {
+        const d = document;
+        const resultado = d.getElementById('resultadoC');
+        const inputCuadrado = d.getElementById('InputCuadrado').value;
+        const perimetro = perimetroCuadrado(inputCuadrado);        
+        resultado.innerHTML = perimetro;
+        //limpiar input 
+        document.getElementById('InputCuadrado').value = "";
+};
+function calcAreaCuadro() {
+    const d = document;
+    const resultado = d.getElementById('resultadoC');
+    const inputCuadrado = d.getElementById('InputCuadrado').value;
+    const area = calcAreaCuadrado(inputCuadrado);
+    resultado.innerHTML = area;
+    //limpiar input 
+    document.getElementById('InputCuadrado').value = "";
 
-
-
+};
 
 // calcularCuadrado(5);
 
@@ -57,15 +74,43 @@ function calcAreaCuadrado(lado) {
 //     console.log(`El Area del triangulo es: ${area}cm^2`);    
 // }
 
-function calcPerimetroTriangulo(ladoA, ladoB, base) {
+function perimetroTriangulo(ladoA, ladoB, base) {
     perimetro = ladoA + ladoB + base;
     return `El perimetro del triangulo es: ${perimetro}cm`;
 };
 
-function calcAreaTriangulo(base, altura) {
+function areaTriangulo(base, altura) {
     area = (base * altura) / 2;
     return `El Area del triangulo es: ${area}cm^2`;
-}
+};
+
+function calcPerimetroTrian() {
+    const d = document;
+    const resultado = d.getElementById('resultadoT');
+    const InputTriangulo1 = d.getElementById('InputTriangulo1').value;
+    const InputTriangulo2 = d.getElementById('InputTriangulo2').value;
+    const InputTriangulo3 = d.getElementById('InputTriangulo3').value;
+    const perimetro = perimetroTriangulo(parseInt(InputTriangulo1), parseInt(InputTriangulo2), parseInt(InputTriangulo3));        
+    resultado.innerHTML = perimetro;
+    //limpiar input 
+    document.getElementById('InputTriangulo1').value = "";
+    document.getElementById('InputTriangulo2').value = "";
+    document.getElementById('InputTriangulo3').value = "";
+};
+
+function calcAreaTrian() {
+    const d = document;
+    const resultado = d.getElementById('resultadoT2');
+    const InputTriangulo4 = d.getElementById('InputTriangulo4').value;
+    const InputTriangulo5 = d.getElementById('InputTriangulo5').value;    
+    const area = areaTriangulo(parseInt(InputTriangulo4), parseInt(InputTriangulo5));
+    resultado.innerHTML = area;
+    //limpiar input 
+    document.getElementById('InputTriangulo4').value = "";
+    document.getElementById('InputTriangulo5').value = "";
+    
+};
+
 
 
 //funcion calcular perimetro y area de triangulo ingresar datos en el siguiente orden
